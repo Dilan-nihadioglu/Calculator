@@ -8,7 +8,7 @@ w.resizable(FALSE,FALSE)
 w.tk_setPalette("#014D27")
 header=Label(w,text="EXECUTE",font="algerian",fg="orange")
 header.pack(side="top")
-screen=Entry(w,fg="orange",font="Arial 20 bold",width=14,justify="right") #justify right deme yazı sağdan sola doğru ilerlesin demek
+screen=Entry(w,fg="orange",font="Arial 20 bold",width=14,justify="right") 
 screen.pack()
 
 result=""
@@ -24,7 +24,7 @@ def calculate(key):
 
     if key=="=":
         screen.delete(0,END)
-        result=eval(result,{"__builtins__":None},{}) #eval fonksiyonu textin içerisindeki her sembolu ayırıp hesaplar.
+        result=eval(result,{"__builtins__":None},{}) 
         result=str(result)
         screen.insert(END,result)
 
@@ -38,7 +38,7 @@ b=0.22
 symbols=["()","%","**","-","1","2","3","+","4","5","6","/","7","8","9","*","=","0","C",","]      
 for i in symbols:
     y=lambda x=i : calculate(x)
-    symbol=Button(w,text=i,relief="raised",font="algerian",fg="orange",bg="black",command=y) #relief tuş şekillendirmesi falan
+    symbol=Button(w,text=i,relief="raised",font="algerian",fg="orange",bg="black",command=y) 
     symbol.place(relx=a,rely=b)
     a+=0.25
     if(a>=1.0):
